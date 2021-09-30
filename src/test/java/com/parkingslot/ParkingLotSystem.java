@@ -27,4 +27,10 @@ public class ParkingLotSystem {
             return true;
         return false;
     }
+
+    public void isLotFull(Object vehicle) throws ParkingLotException {
+        if (this.vehicle != null)
+            throw new ParkingLotException("ParkingLot is full");
+        this.vehicle = vehicle;
+    }
 }

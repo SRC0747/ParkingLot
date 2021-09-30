@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.parkingslot.ParkingLotTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2021-09-30T14:15:58" hostname="DESKTOP-U9VT6NQ" time="0.442">
+<testsuite name="com.parkingslot.ParkingLotTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2021-09-30T20:56:15" hostname="DESKTOP-U9VT6NQ" time="0.324">
   <properties/>
-  <testcase name="givenAVehicle_WhenAlreadyParked_ShouldReturnFalse()" classname="com.parkingslot.ParkingLotTest" time="0.442"/>
+  <testcase name="givenASignByPassingMessage_WhenParkingLotIsFull_ShouldReturnTrue()" classname="com.parkingslot.ParkingLotTest" time="0.324"/>
   <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[com.parkingslot.ParkingLotException: ParkingLot is full.
-	at com.parkingslot.ParkingLotSystem.park(ParkingLotSystem.java:11)
-	at com.parkingslot.ParkingLotTest.givenAVehicle_WhenAlreadyParked_ShouldReturnFalse(ParkingLotTest.java:34)
+  <system-err><![CDATA[com.parkingslot.ParkingLotException: ParkingLot is full
+	at com.parkingslot.ParkingLotSystem.isLotFull(ParkingLotSystem.java:33)
+	at com.parkingslot.ParkingLotTest.givenASignByPassingMessage_WhenParkingLotIsFull_ShouldReturnTrue(ParkingLotTest.java:56)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)

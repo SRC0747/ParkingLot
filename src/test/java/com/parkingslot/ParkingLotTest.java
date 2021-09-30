@@ -48,4 +48,15 @@ class ParkingLotTest {
             e.printStackTrace();
         }
     }
+
+    @Test
+    public void givenASignByPassingMessage_WhenParkingLotIsFull_ShouldReturnTrue() {
+        try{
+            parkingLotSystem.isLotFull(vehicle);
+            parkingLotSystem.isLotFull(new Object());
+        }catch (ParkingLotException e){
+            Assertions.assertEquals("ParkingLot is full", e.getMessage());
+            e.printStackTrace();
+        }
+    }
 }
