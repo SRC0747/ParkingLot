@@ -13,7 +13,7 @@ class ParkingLotTest {
     @BeforeEach
     public void setUp() throws Exception {
         vehicle = new Object();
-        parkingLotSystem = new ParkingLotSystem();
+        parkingLotSystem = new ParkingLotSystem(1);
     }
 
     @Test
@@ -50,13 +50,16 @@ class ParkingLotTest {
     }
 
     @Test
-    public void givenASignByPassingMessage_WhenParkingLotIsFull_ShouldReturnTrue() {
-        try{
-            parkingLotSystem.isLotFull(vehicle);
-            parkingLotSystem.isLotFull(new Object());
-        }catch (ParkingLotException e){
-            Assertions.assertEquals("ParkingLot is full", e.getMessage());
+    public void givenWhenParkingLotIsFull_ShouldInformTheOwner() {
+        ParkingLotOwner owner = new ParkingLotOwner();
+        parkingLotSystem.registerOwner(owner);
+        try {
+            parkingLotSystem.park(vehicle);
+            parkingLotSystem.park(new Object());
+        } catch (ParkingLotException e) {
             e.printStackTrace();
         }
+        boolean capacityFull = owner.IsCapacityFull();
+        Assertions.assertTrue(capacityFull);
     }
 }

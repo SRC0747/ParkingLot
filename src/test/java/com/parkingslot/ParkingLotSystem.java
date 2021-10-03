@@ -1,14 +1,22 @@
 package com.parkingslot;
 
 public class ParkingLotSystem {
+    private final int actualCapacity;
+    private  int currentCapacity;
     private Object vehicle;
+    private ParkingLotOwner owner;
 
-    public ParkingLotSystem(){
+    public ParkingLotSystem(int capacity){
+        this.currentCapacity = 0;
+        this.actualCapacity = capacity;
     }
 
     public void park(Object vehicle) throws ParkingLotException{
-        if (this.vehicle != null)
+        if (this.currentCapacity == this.actualCapacity) {
+            owner.capacityIsFull();
             throw new ParkingLotException("ParkingLot is full.");
+        }
+        this.currentCapacity++;
         this.vehicle = vehicle;
     }
 
@@ -28,9 +36,7 @@ public class ParkingLotSystem {
         return false;
     }
 
-    public void isLotFull(Object vehicle) throws ParkingLotException {
-        if (this.vehicle != null)
-            throw new ParkingLotException("ParkingLot is full");
-        this.vehicle = vehicle;
+    public void registerOwner(ParkingLotOwner owner) {
+        this.owner = owner;
     }
 }
