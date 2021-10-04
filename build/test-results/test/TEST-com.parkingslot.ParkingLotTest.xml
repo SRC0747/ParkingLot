@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.parkingslot.ParkingLotTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2021-10-04T08:31:47" hostname="DESKTOP-U9VT6NQ" time="0.053">
+<testsuite name="com.parkingslot.ParkingLotTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2021-10-04T14:03:12" hostname="DESKTOP-U9VT6NQ" time="0.178">
   <properties/>
-  <testcase name="givenCapacityIs2_ShouldBeAbleToPark2Vehicles()" classname="com.parkingslot.ParkingLotTest" time="0.053"/>
+  <testcase name="givenCapacityIs2_ShouldBeAbleToPark2Vehicles()" classname="com.parkingslot.ParkingLotTest" time="0.178"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

@@ -28,6 +28,8 @@ public class ParkingLotSystem {
             throw new ParkingLotException("ParkingLot is full.");
         }
         //this.currentCapacity++;
+        if(isVehicleParked(vehicle))
+            throw new ParkingLotException("Vehicle already parked.");
         this.vehicles.add(vehicle);
     }
 
