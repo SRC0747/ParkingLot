@@ -8,8 +8,10 @@ public class ParkingLotSystem {
     private ArrayList vehicles;
     private ArrayList<ParkingLotObserver> observers;
     //private AirportSecurity security;
+    private ArrayList slots;
 
     public ParkingLotSystem(int capacity){
+        this.slots = new ArrayList();
         this.observers = new ArrayList<>();
         this.vehicles = new ArrayList<>();
         //this.currentCapacity = 0;
@@ -24,6 +26,10 @@ public class ParkingLotSystem {
     public void setCapacity(int capacity) {
         this.actualCapacity = capacity;
     }
+
+    /*public void registerSecurity(AirportSecurity airportSecurity) {
+       // this.security = airportSecurity;
+    }*/
 
     public void park(Object vehicle) throws ParkingLotException{
         if (this.vehicles.size() == this.actualCapacity) {
@@ -58,7 +64,8 @@ public class ParkingLotSystem {
         return false;
     }
 
-    /*public void registerSecurity(AirportSecurity airportSecurity) {
-       // this.security = airportSecurity;
-    }*/
+    public void getAvailableSlot(Object slot) {
+       this.slots.add(slot);
+    }
+
 }

@@ -93,4 +93,17 @@ class ParkingLotTest {
         boolean capacityFull = airportSecurity.IsCapacityFull();
         Assertions.assertTrue(capacityFull);
     }
+
+    @Test
+    public void givenParkingAttendantAvailableSlot_WhereToParkTheCars() {
+        Object slot = new Object();
+        parkingLotSystem.getAvailableSlot(slot);
+        try{
+            parkingLotSystem.park(vehicle);
+            boolean isUnParked = parkingLotSystem.unPark(vehicle);
+            Assertions.assertTrue(isUnParked);
+        }catch (ParkingLotException e){
+            e.printStackTrace();
+        }
+    }
 }
