@@ -7,6 +7,7 @@ public class ParkingLotSystem {
     //private  int currentCapacity;
     private ArrayList vehicles;
     private ParkingLotOwner owner;
+    private AirportSecurity security;
 
     public ParkingLotSystem(int capacity){
         this.vehicles = new ArrayList<>();
@@ -25,6 +26,8 @@ public class ParkingLotSystem {
     public void park(Object vehicle) throws ParkingLotException{
         if (this.vehicles.size() == this.actualCapacity) {
             owner.capacityIsFull();
+            /*Showing sign of full to Airport Security.*/
+            security.capacityIsFull();
             throw new ParkingLotException("ParkingLot is full.");
         }
         //this.currentCapacity++;
@@ -50,4 +53,7 @@ public class ParkingLotSystem {
         return false;
     }
 
+    public void registerSecurity(AirportSecurity airportSecurity) {
+        this.security = airportSecurity;
+    }
 }
