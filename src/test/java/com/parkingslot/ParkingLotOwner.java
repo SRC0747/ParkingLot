@@ -1,6 +1,6 @@
 package com.parkingslot;
 
-public class ParkingLotOwner {
+public class ParkingLotOwner implements ParkingLotObserver{
 
     private boolean isFullCapacity;
 
