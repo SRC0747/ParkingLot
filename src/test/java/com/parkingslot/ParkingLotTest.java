@@ -20,7 +20,7 @@ class ParkingLotTest {
     public void givenAVehicle_WhenParked_ShouldReturnTrue(){
         try{
             parkingLotSystem.park(vehicle);
-            boolean isParked = parkingLotSystem.isVehicleParked(vehicle);
+            boolean isParked = parkingLotSystem.findVehicle_IsVehicleParked(vehicle);
             Assertions.assertTrue(isParked);
         }catch (ParkingLotException e) {
             e.printStackTrace();
@@ -70,8 +70,8 @@ class ParkingLotTest {
         try {
             parkingLotSystem.park(vehicle);
             parkingLotSystem.park(vehicle2);
-            boolean isParked1 = parkingLotSystem.isVehicleParked(vehicle);
-            boolean isParked2 = parkingLotSystem.isVehicleParked(vehicle2);
+            boolean isParked1 = parkingLotSystem.findVehicle_IsVehicleParked(vehicle);
+            boolean isParked2 = parkingLotSystem.findVehicle_IsVehicleParked(vehicle2);
             Assertions.assertTrue(isParked1 && isParked2);
         } catch (ParkingLotException e) {
             e.printStackTrace();
@@ -109,10 +109,10 @@ class ParkingLotTest {
 
     @Test
     public void givenTheVehicle_SoThatDriverCanGoHome() {
-        parkingLotSystem.findVehicle(vehicle);
+        parkingLotSystem.findVehicle_IsVehicleParked(vehicle);
         try{
             parkingLotSystem.park(vehicle);
-            boolean isParked = parkingLotSystem.findVehicle(vehicle);
+            boolean isParked = parkingLotSystem.findVehicle_IsVehicleParked(vehicle);
             Assertions.assertTrue(isParked);
         }catch (ParkingLotException e) {
             e.printStackTrace();

@@ -42,7 +42,7 @@ public class ParkingLotSystem {
             throw new ParkingLotException("ParkingLot is full.");
         }
         //this.currentCapacity++;
-        if(isVehicleParked(vehicle))
+        if(findVehicle_IsVehicleParked(vehicle))
             throw new ParkingLotException("Vehicle already parked.");
         this.vehicles.add(vehicle);
     }
@@ -58,17 +58,24 @@ public class ParkingLotSystem {
         return false;
     }
 
-    public boolean isVehicleParked(Object vehicle) {
+    /*public boolean isVehicleParked(Object vehicle) {
         if (this.vehicles.contains(vehicle))
             return true;
         return false;
-    }
+    }*/
 
     public void getAvailableSlot(Object slot) {
        this.slots.add(slot);
     }
 
-    public boolean findVehicle(Object vehicle) {
+    /*public boolean findVehicle(Object vehicle) {
+        if (this.vehicles.contains(vehicle))
+            return true;
+        return false;
+    }*/
+
+    //Refactor the code for isVehicleParked() and findVehicle()
+    public boolean findVehicle_IsVehicleParked(Object vehicle){
         if (this.vehicles.contains(vehicle))
             return true;
         return false;
