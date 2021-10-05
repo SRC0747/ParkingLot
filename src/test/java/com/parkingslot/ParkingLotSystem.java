@@ -68,4 +68,9 @@ public class ParkingLotSystem {
        this.slots.add(slot);
     }
 
+    public boolean findVehicle(Object vehicle) {
+        if (this.vehicles.contains(vehicle))
+            return true;
+        return false;
+    }
 }

@@ -106,4 +106,16 @@ class ParkingLotTest {
             e.printStackTrace();
         }
     }
+
+    @Test
+    public void givenTheVehicle_SoThatDriverCanGoHome() {
+        parkingLotSystem.findVehicle(vehicle);
+        try{
+            parkingLotSystem.park(vehicle);
+            boolean isParked = parkingLotSystem.findVehicle(vehicle);
+            Assertions.assertTrue(isParked);
+        }catch (ParkingLotException e) {
+            e.printStackTrace();
+        }
+    }
 }
